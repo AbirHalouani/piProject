@@ -5,21 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackEndComponent } from './back-end/back-end.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 //const   appRoutes: Routes = [  {path: '',component:BackEndComponent}] //,children:[]
 const routes : Routes = [
-  {path: 'back', component: BackEndComponent},
+  
+    {path: '', component : AppComponent}, 
+    {path: 'back-end', component: BackEndComponent} ,
+    {path: 'home', component: HomeComponent},
   
   ];
 @NgModule({
   declarations: [
     AppComponent,
     BackEndComponent,
+    HomeComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot( routes)
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],

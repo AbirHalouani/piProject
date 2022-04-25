@@ -21,6 +21,7 @@
 	URL: http://freehtml5.co
 -->
 <html>
+	<base href="/">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,20 +74,19 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	
 		
 	<div class="gtco-loader"></div>
 	
 	<div id="page">
 
-	
-	<!-- <div class="page-inner"> -->
-	<nav class="gtco-nav" role="navigation">
+
+<!--	<nav class="gtco-nav" role="navigation">
 		<div class="gtco-container">
 			
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Traveler <em>.</em></a></div>
+					<div id="gtco-logo"><a href="index.html">Travency <em>.</em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
@@ -101,18 +101,23 @@
 							</ul>
 						</li>
 						<li><a href="contact.html">Contact</a></li>
-            <li><a href="/back">sign In</a></li>
-					</ul>	
+            <li ><a href="/back-end" >back </a></li> 
+			<li><a href ="home" >home</a> </li>
+			
+				</ul>	
+				
 				</div>
 			</div>
 			
 		</div>
-	</nav>
+	</nav> -->
+
+	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(assets/images/img_bg_2.jpg)" background-size=5%   background-attachment: fixed>
+		
+		
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(assets/images/img_bg_2.jpg)">
-		<div class="overlay"></div>
 		<div class="gtco-container">
-			<div class="row">
+		<!--	<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-left">
 					
 
@@ -121,7 +126,7 @@
 							<h1>Find your travel partner </h1>	
 						</div>
 						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
-							<div class="form-wrap">
+						<!--	<div class="form-wrap">
 								<div class="tab">
 									
 									<div class="tab-content">
@@ -174,21 +179,27 @@
 										</div>
 
 										
-									</div>
+										</div>
 								</div>
 							</div>
-						</div>
+						</div>-->
 					</div>
-							
+								
 					
-				</div>
-			</div>
+				</div> 
+			</div>>
 		</div>
-	</header>
 	
+	</header>
+	<body>
+	<app-root></app-root></body>
 	<div class="gtco-section">
 		<div class="gtco-container">
-			<div class="row">
+			
+			
+		
+			
+		<!--	<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
 					<h2>Most Popular Destination</h2>
 					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
@@ -404,10 +415,11 @@
 						</div>
 					</form>
 				</div>
-			</div>
+			</div> -->	
 		</div>
 	</div>
-
+	
+	
 	<footer id="gtco-footer" role="contentinfo">
 		<div class="gtco-container">
 			<div class="row row-p	b-md">
@@ -480,7 +492,7 @@
 	<!-- </div> -->
 
 	</div>
-
+-->
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
@@ -512,8 +524,13 @@
 	<!-- Main -->
 	<script src="assets/js/main.js"></script>
 
-	</body>
 
-  <router-outlet></router-outlet>
+<!-- Apex Chart -->
+<script src="assets/js/plugins/apexcharts.min.js"></script>
+
+<!-- custom-chart js -->
+<script src="assets/js/pages/dashboard-main.js"></script>
+
+
 </html>
 
