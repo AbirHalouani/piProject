@@ -1,0 +1,31 @@
+<div class="card-body p-0">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    
+                    <th>idTravel</th>
+                    <th>StartDate</th>
+                    <th >LastDate</th>
+                    <th >departurePlace</th>
+                    <th >destination</th>
+                    <th >status</th>
+                    <th >confirmationStatus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let t of Travels ">
+                   
+                    <td>{{t.idTravel}}</td>
+                    <td>{{t.startDate}}</td>
+                    <td>{{t.LastDate}}</td>
+                    <td>{{t.departurePlace}}</td>
+                    <td>{{t.destination}}</td>
+                    <td ><label class="badge badge-light-danger">{{t.status}}</label></td>
+                    <td ><label class="badge badge-light-danger">{{t.confirmationStatus}}</label></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
