@@ -10,6 +10,7 @@ import { ListTravelComponent } from './list-travel/list-travel.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AddTravelComponent } from './add-travel/add-travel.component'
 import { FormsModule } from '@angular/forms';
+import { UpdateTravelComponent } from './update-travel/update-travel.component';
 //const   appRoutes: Routes = [  {path: '',component:BackEndComponent}] //,children:[]
 const routes : Routes = [
   
@@ -18,6 +19,7 @@ const routes : Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'list-travel', component: ListTravelComponent},
     {path: 'add-travel', component: AddTravelComponent},
+    {path: 'update-travel/:id', component: UpdateTravelComponent},
   
   ];
 @NgModule({
@@ -26,7 +28,8 @@ const routes : Routes = [
     BackEndComponent,
     HomeComponent,
     ListTravelComponent,
-    AddTravelComponent
+    AddTravelComponent,
+    UpdateTravelComponent
   
   ],
   imports: [

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Travel } from '../travel';
-import{TravelService} from '../travel.service'
+import{TravelService} from '../travel.service';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-travel',
@@ -10,7 +12,7 @@ import{TravelService} from '../travel.service'
 export class ListTravelComponent implements OnInit {
   
   Travels: Travel[] = [];
-  constructor(private travelService: TravelService ) { }
+  constructor(private travelService: TravelService , private router :Router) { }
  date :Date = new Date("2018/02/06");
   ngOnInit(): void {
   /*  this.Travels=[{
@@ -29,5 +31,9 @@ export class ListTravelComponent implements OnInit {
     this.travelService.getTravelList().subscribe(data =>{
       console.log(data);
       this.Travels=data ;});
+  }
+
+  updateTravel(id:number){
+    this.router.navigate(['update-travel',id]);
   }
 }

@@ -7,7 +7,7 @@ import { Travel } from './travel';
 })
 export class TravelService {
   private baseURL = "http://localhost:8089/SpringMVC/Travel/"
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient ) { }
 
   getTravelList():Observable<Travel[]>
   {return this.httpClient.get<Travel[]>(`${this.baseURL+"afficherTravel"}`).pipe(response=>response);}
@@ -15,4 +15,13 @@ export class TravelService {
   addTravel(travel:Travel):Observable<Object>{
     return this.httpClient.post(`${this.baseURL +"add-Travel" }`,travel); 
   }
+
+  getTravelById(id:number):Observable<Travel>
+  {return this.httpClient.get<Travel>(`${this.baseURL+"findTravelsByID"}/${id}`);}
+
+  updateTravelById(id:number,travel : Travel):Observable<Object>
+  {
+    return this.httpClient.put(`${this.baseURL+"update-Travel-byId"}/${id}`,travel);
+  }
+  
 }
