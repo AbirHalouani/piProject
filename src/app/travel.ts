@@ -8,6 +8,7 @@ export class Travel {
      status!: string; 
 	 departurePlace!: string; 
 	 confirmationStatus!: boolean; 
+
 	
 
 

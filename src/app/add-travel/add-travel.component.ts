@@ -25,6 +25,7 @@ travel:Travel=new Travel();
     this.travel=t ;
     console.log(this.travel);
     this.saveTravel(this.travel);
+   
   }
 goToTravelList()
 {this.router.navigate(['/list-travel']);}
