@@ -1,0 +1,19 @@
+<h2>Domaine List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Domaines Names</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let domaine of domaines">
+            <td>{{domaine.name_d}}</td>
+            <td>
+                <button (click)= "updateDomaine(domaine.id_d)" class="btn btn-info">Update</button>
+                <button (click)= "deleteDomaine(domaine.id_d)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
