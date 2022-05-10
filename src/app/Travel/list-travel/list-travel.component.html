@@ -4,27 +4,37 @@
             <thead>
                 <tr>
                     
-                    <th>idTravel</th>
+                   
                     <th>StartDate</th>
                     <th >LastDate</th>
                     <th >departurePlace</th>
                     <th >destination</th>
+                    <th >Travelers</th> 
+                    
                     <th >status</th>
                     <th >confirmationStatus</th>
                     <th ></th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor ="let t of Travels ">
                    
-                    <td>{{t.idTravel}}</td>
+                   
                     <td>{{t.startDate}}</td>
-                    <td>{{t.LastDate}}</td>
+                    <td>{{t.lastDate}}</td>
                     <td>{{t.departurePlace}}</td>
                     <td>{{t.destination}}</td>
+
+                    <td> <ul class="dropdown" *ngFor ="let u of t.users">
+                        <li><a>{{u.user_firstName}}</a></li>
+                    </ul>
+                 </td>
+                   
                     <td ><label class="badge badge-light-danger">{{t.status}}</label></td>
                     <td ><label class="badge badge-light-danger">{{t.confirmationStatus}}</label></td>
                     <td><button (click)="updateTravel(t.idTravel)" class="btn btn-info"> update </button></td>
+                   
                 </tr>
                 
             </tbody>

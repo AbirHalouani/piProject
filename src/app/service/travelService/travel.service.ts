@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Travel } from './travel';
+import { Travel } from 'src/app/modules/travel';
+import { User } from 'src/app/modules/user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,5 +25,15 @@ export class TravelService {
   {
     return this.httpClient.put(`${this.baseURL+"update-Travel-byId"}/${id}`,travel);
   }
+
+  getTravelByIdUser(id:number):Observable<Travel[]>
+  {return this.httpClient.get<Travel[]>(`${this.baseURL+"findTravelsByUser"}/${id}`).pipe(response=>response);}
+
+  affecterTravelToUser(id:number,travel : Travel):Observable<Object>
+  {return this.httpClient.put(`${this.baseURL+"add-TravelAndUser"}/${id}`,travel);}
+
+  getTravelPartnerList(idUser:number, idTravel:number):Observable<User[]>
+  {return this.httpClient.get<User[]>(`${this.baseURL+"findTravelPartner"}/${idUser}/${idTravel}`).pipe(response=>response);}
+
   
 }

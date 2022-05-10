@@ -11,8 +11,17 @@
             <div class="container">
 			<li><a routerLink="/home">home</a></li>
             <li><a routerLink="/list-travel">Travels</a></li>
-			<li><a routerLink="/add-travel">create Travel</a></li>
-			
+			<li><a routerLink="/add-travel/:id">create Travel</a></li>
+			<li><a routerLink="/list-travelPartner/:id/:id">p Travel</a></li>
+			<li class="has-dropdown">
+				<a href="#">TravelAgency</a>
+				<ul class="dropdown">
+					<li><a  routerLink="/add-travelAgency">create Travel Agency</a></li>
+					<li><a routerLink="/list-travelAgency">Travel Agency</a></li>
+					<li><a routerLink="list-travelByUser/:id">Your Travels</a></li>
+					
+				</ul>
+			</li>
 			</div>	
 				</ul>
 				</div>

@@ -1,10 +1,11 @@
+<div class="col-md-8 offset-md-3">
 <div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
     <div class="form-wrap">
         <div class="tab">
             
             <div class="tab-content">
                 <div class="tab-content-inner active">
-                    <h3>Book Your Trip</h3>
+                    <h3>Update Your Trip</h3>
                     <form (ngSubmit)="onSubmit(travel)">
                        
                         <div class="row form-group">
@@ -36,7 +37,7 @@
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label>End Travel  </label>
-                                <input type="datetime-local" name="LastDate" class="form-control" [(ngModel)]="travel.LastDate">
+                                <input type="datetime-local" name="LastDate" class="form-control" [(ngModel)]="travel.lastDate">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -51,4 +52,5 @@
                 </div>
         </div>
     </div>
+</div>
 </div>

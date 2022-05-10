@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Travel } from '../travel';
-import{TravelService} from '../travel.service';
+import { Travel } from '../../modules/travel';
+import{TravelService} from 'src/app/service/travelService/travel.service';
 
 import { Router } from '@angular/router';
 

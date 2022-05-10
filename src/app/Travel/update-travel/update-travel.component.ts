@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Travel } from '../travel';
-import{TravelService} from '../travel.service';
-
+import { Travel } from '../../modules/travel';
+import{TravelService} from 'src/app/service/travelService/travel.service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-update-travel',
   templateUrl: './update-travel.component.html',
@@ -13,7 +13,7 @@ export class UpdateTravelComponent implements OnInit {
   id!:number;
   travel : Travel=new Travel();
 
-  constructor(private travelService: TravelService,private route : ActivatedRoute) { }
+  constructor(private travelService: TravelService,private route : ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.travel=new Travel();
@@ -25,6 +25,8 @@ export class UpdateTravelComponent implements OnInit {
 
       this.travelService.updateTravelById(this.id,travel).subscribe(data =>{
         console.log(data)});
+
+         this.router.navigate(['list-travel']);
     }
   
 
