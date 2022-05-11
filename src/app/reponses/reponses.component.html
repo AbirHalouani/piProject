@@ -1,0 +1,102 @@
+<h2 style="text-align: center">La liste des réponses:</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <input
+            type="text"
+            class="form-control"
+            (keyup)="search($event)"
+            placeholder="search..."
+          />
+          <div class="table-responsive">
+            <table class="table table-striped" id="htmlData">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Question</th>
+                  <th scope="col">Reponse</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let rep of reponsesList">
+                  <th>{{ rep.idReponse }}</th>
+                  <th scope="row">{{ rep.question?.text }}?</th>
+                  <td>{{ rep.text }}</td>
+                  <td>
+                    <button type="button" class="btn btn-info" style="color:white;" >Modifier</button>&nbsp;
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="remove(rep.idReponse)"
+                      style="color: white"
+                    >
+                      supprimer
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-danger p-2 text-white" (click)="openPDF()">
+                Exporter la liste des reponses en pdf
+              </button>
+              <h2 style="text-align: center">Ajouter une réponse:</h2>
+              <h2 style="text-align: center" *ngIf="">Modifier le question:</h2>
+              <form
+              [formGroup]="reponseForm"
+              (ngSubmit)="addReponse()"
+              autocomplete="off"
+            >
+              <div class="form-group">
+                <label>Réponse: </label>
+                <input
+                  type="text"
+                  placeholder="ecrire votre question ici...."
+                  formControlName="text"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label>Question: </label>
+
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="idQuestion"
+                >
+                  <option selected>
+                    Sélectionner un Question
+                  </option>
+                  <option *ngFor="let c of questionsList" [value]="c.idQuestion">
+                    {{c.text}}
+                  </option>
+                  
+                </select>
+              </div>
+              <div>
+                <button
+                  class="btn btn-success"
+                  style="color: white;margin-top: 10px;"
+                  type="submit"
+                >
+                  Ajouter une Réponse
+                </button>
+                <button
+                *ngIf=""
+                class="btn btn-info"
+                style="color: white"
+                type="submit"
+              >
+                Modifier le Réponse
+              </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
