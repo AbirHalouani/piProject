@@ -1,0 +1,84 @@
+<h2 style="text-align: center">La liste des questions:</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <input
+            type="text"
+            class="form-control"
+            (keyup)="search($event)"
+            placeholder="search..."
+          />
+          <div class="table-responsive">
+            <table class="table table-striped" id="htmlData">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Question</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let quest of questionsList">
+                  <th scope="row">{{ quest.idQuestion }}</th>
+                  <td>{{ quest.text }}</td>
+                  <td>
+                    <button type="button" class="btn btn-info" style="color:white;" (click)="modifierQuestion(quest.idQuestion)">Modifier</button>&nbsp;
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="remove(quest.idQuestion)"
+                      style="color: white"
+                    >
+                      supprimer
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-danger p-2 text-white" (click)="openPDF()">
+                Exporter la liste des questions en pdf
+              </button>
+              <h2 style="text-align: center">Ajouter un question:</h2>
+              <h2 style="text-align: center" *ngIf="">Modifier le question:</h2>
+              <form
+              [formGroup]="questionForm"
+              (ngSubmit)="addQuestion()"
+              autocomplete="off"
+            >
+              <div class="form-group">
+                <label>Question: </label>
+                <input
+                  type="text"
+                  placeholder="ecrire votre question ici...."
+                  formControlName="text"
+                  class="form-control"
+                />
+              </div>
+       
+              <div>
+                <button
+                  class="btn btn-success"
+                  style="color: white;margin-top: 10px;"
+                  type="submit"
+                >
+                  Ajouter un Question
+                </button>
+                <button
+                *ngIf=""
+                class="btn btn-info"
+                style="color: white"
+                type="submit"
+              >
+                Modifier le Question
+              </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+<h2 style="text-align: center">La liste des réclamations:</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <input
+            type="text"
+            class="form-control"
+            (keyup)="search($event)"
+            placeholder="search..."
+          />
+          <div class="table-responsive">
+            <table class="table table-striped" id="htmlData">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">User Id</th>
+                  <th scope="col">Date Reclamation</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Type Reclamation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let rep of reclamationsList">
+                  <th>{{ rep.idR }}</th>
+                  <th>{{ rep.user_id }}</th>
+                  <th>{{ rep.date | date: 'dd/MM/yyyy' }}</th>
+                  <th>{{ rep.discription }}</th>
+                  <th>{{ rep.typeReclamation }}</th>
+                  <td>
+                    <!-- <button type="button" class="btn btn-info" style="color:white;" (click)="modifierQuestion(quest.idQuestion)">Modifier</button>&nbsp;-->
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="remove(rep.idR)"
+                      style="color: white"
+                    >
+                      supprimer
+                    </button> 
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-danger p-2 text-white" (click)="openPDF()">
+                Exporter la liste des réclamations en pdf
+              </button>
+              <h2 style="text-align: center">Ajouter une réclamation:</h2>
+              <h2 style="text-align: center" *ngIf="">Modifier la réclamation:</h2>
+              <form
+              [formGroup]="reclamationForm"
+              (ngSubmit)="addReclamation()"
+              autocomplete="off"
+            >
+              <div class="form-group">
+                <label>Description: </label>
+                <input
+                  type="text"
+                  placeholder="ecrire votre description ici...."
+                  formControlName="discription"
+                  class="form-control"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label>Type reclamation: </label>
+
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  formControlName="typeReclamation"
+                >
+                  <option selected>
+                    Sélectionner un Question
+                  </option>
+                  <option>
+                    prix
+                </option><option>
+                    voyageure
+                </option><option>
+                    voyage
+                </option><option>
+                    autres
+                </option>
+                  
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date: </label>
+                <input
+                  type="date"
+                  placeholder="ecrire le type de reclamation ici...."
+                  formControlName="date"
+                  class="form-control"
+                />
+              </div>
+              <div>
+                <button
+                  class="btn btn-success"
+                  style="color: white;margin-top: 10px;"
+                  type="submit"
+                >
+                  Envoyer la réclamation
+                </button>
+                <button
+                *ngIf=""
+                class="btn b: white"
+                type="submittn-info"
+                style="color:black"
+              >
+                Modifier le Réponse
+              </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
