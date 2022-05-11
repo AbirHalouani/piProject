@@ -1,4 +1,6 @@
 <div class="card-body p-0">
+
+    <td><button (click)="verifySecurity()" class="btn btn-info"> verify security destination  </button></td>
     <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead>
@@ -18,7 +20,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let t of Travels ">
+               
+               
+                <tr *ngFor ="let t of Travels | paginate: { itemsPerPage: 5, currentPage: p }">
                    
                    
                     <td>{{t.startDate}}</td>
@@ -34,10 +38,15 @@
                     <td ><label class="badge badge-light-danger">{{t.status}}</label></td>
                     <td ><label class="badge badge-light-danger">{{t.confirmationStatus}}</label></td>
                     <td><button (click)="updateTravel(t.idTravel)" class="btn btn-info"> update </button></td>
+                    <td><button (click)="block(t.destination)" class="btn btn-info"> block destination  </button></td>
                    
                 </tr>
-                
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </tbody>
+
+
+           
         </table>
+     
     </div>
 </div>

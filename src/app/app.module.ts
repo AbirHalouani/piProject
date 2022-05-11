@@ -16,6 +16,7 @@ import { ListTravelAgencyComponent } from './TravelAgency/list-travel-agency/lis
 import { UpdateTravelAgencyComponent } from './TravelAgency/update-travel-agency/update-travel-agency.component';
 import { TravelsByUserComponent } from './Travel/travels-by-user/travels-by-user.component';
 import { TravelPartnerComponent } from './Travel/travel-partner/travel-partner.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 //const   appRoutes: Routes = [  {path: '',component:BackEndComponent}] //,children:[]
 const routes : Routes = [
   
@@ -46,7 +47,8 @@ const routes : Routes = [
     ListTravelAgencyComponent,
     UpdateTravelAgencyComponent,
     TravelsByUserComponent,
-    TravelPartnerComponent
+    TravelPartnerComponent,
+    
   
   ],
   imports: [
@@ -54,7 +56,8 @@ const routes : Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes) ,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

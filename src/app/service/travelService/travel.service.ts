@@ -35,5 +35,10 @@ export class TravelService {
   getTravelPartnerList(idUser:number, idTravel:number):Observable<User[]>
   {return this.httpClient.get<User[]>(`${this.baseURL+"findTravelPartner"}/${idUser}/${idTravel}`).pipe(response=>response);}
 
-  
+  blockDestination(id:string):Observable<Object>
+  {return this.httpClient.put(`${this.baseURL+"blockTravelByDestinaton"}/${id}`,null);}
+
+
+  verifyDestination():Observable<Object>
+  {return this.httpClient.get(`${this.baseURL+"blockDestination"}`);}
 }

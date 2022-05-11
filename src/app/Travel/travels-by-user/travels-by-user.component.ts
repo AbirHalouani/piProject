@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./travels-by-user.component.css']
 })
 export class TravelsByUserComponent implements OnInit {
-
+  p: number = 1;
   id!:number;
   idTravel!:number;
   Travels: Travel[] = [];

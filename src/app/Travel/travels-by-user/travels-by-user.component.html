@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="row" >
-    <div class="col-lg-4 col-md-4 col-sm-6" *ngFor ="let t of Travels "> 
+    <div class="col-lg-4 col-md-4 col-sm-6" *ngFor ="let t of Travels | paginate: { itemsPerPage: 3, currentPage: p }"> 
         <a   class="fh5co-card-item image-popup">
            
             <div class="fh5co-text">
@@ -17,4 +17,5 @@
             </div>
         </a>
     </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

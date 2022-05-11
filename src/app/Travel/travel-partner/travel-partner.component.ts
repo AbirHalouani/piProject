@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./travel-partner.component.css']
 })
 export class TravelPartnerComponent implements OnInit {
+  p: number = 1;
   Users!:User[];
   idUser!:number;
   idTravel!:number;
