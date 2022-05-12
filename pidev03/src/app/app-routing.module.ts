@@ -8,7 +8,7 @@ const routes: Routes = [
     {path: 'domaines', component: DomaineListComponent},
     {path: 'add-doamine', component: AddDomaineComponent},
     {path: '', redirectTo: 'domaines', pathMatch: 'full'},
-    {path: 'update-domaine/:id', component: UpdateDomaineComponent}
+    {path: 'update-domaine/:id_d', component: UpdateDomaineComponent}
 ];
 
 @NgModule({

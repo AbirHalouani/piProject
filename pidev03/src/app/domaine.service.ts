@@ -8,7 +8,6 @@ import { Domaine } from './domaine';
 export class DomaineService {
 
   private baseURL="http://localhost:8090/SpringMVC/d/domaines";
-
  
   constructor(private httpClient: HttpClient) { }
 
@@ -31,6 +30,10 @@ export class DomaineService {
 
   deleteDomaine(id_d: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}/${id_d}`);
+  }
+
+  searchDomaine(name_d: string): Observable<Object>{
+    return this.httpClient.get(`${this.baseURL}/${name_d}`);
   }
 
 }

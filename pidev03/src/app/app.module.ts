@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AddDomaineComponent } from './add-domaine/add-domaine.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateDomaineComponent } from './update-domaine/update-domaine.component';
+import { GridViewComponent } from './grid-view/grid-view.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { UpdateDomaineComponent } from './update-domaine/update-domaine.componen
     HeaderComponent,
     DomaineListComponent,
     AddDomaineComponent,
-    UpdateDomaineComponent
+    UpdateDomaineComponent,
+    GridViewComponent
   ],
   imports: [
     BrowserModule,

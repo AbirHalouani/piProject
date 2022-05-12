@@ -12,26 +12,23 @@ export class UpdateDomaineComponent implements OnInit {
 
   id_d: number;
   domaine: Domaine = new Domaine();
-  
-  constructor(private domaineService: DomaineService, 
-    private route: ActivatedRoute, private router: Router) { }
+  constructor(private domaineService: DomaineService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    
     this.id_d = this.route.snapshot.params['id_d'];
 
     this.domaineService.getDomaineById(this.id_d).subscribe(data => {
       this.domaine = data;
     }, error => console.log(error));
-    
-    }
-  
+  }
+
   onSubmit(){
     this.domaineService.updateDomaine(this.id_d, this.domaine).subscribe( data =>{
       this.goToDomaineList();
-    },
-    error => console.log(error));
-    
+    }
+    , error => console.log(error));
   }
 
   goToDomaineList(){

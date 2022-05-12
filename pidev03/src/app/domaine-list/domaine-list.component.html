@@ -1,4 +1,12 @@
 <h2>Domaine List</h2>
+<!--
+<form class="form-inline md-form mr-auto mb-4">
+    <input name="search" id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #a   >
+    <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
+  </form>
+
+
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -17,3 +25,35 @@
         </tr>
     </tbody>
 </table>
+-->
+<form class="wrap">
+    <div class="search">
+      <h3>Search country by name filter : </h3>
+      <input class="searchTerm" type="text" name="searchTerm" 
+        placeholder="Filter by country name"
+        [(ngModel)]="searchTerm" (input)="search(searchTerm)" />
+    </div>
+  </form>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th>Domaines Names</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let domaine of domaines | searchFilter: searchTerm; index as i">
+        <td scope="row">{{ i + 1 }}</td>
+        <td>
+          <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + domaine.flag" class="mr-2" style="width: 20px">
+          {{ domaine.name_d }}
+        </td>
+        <td>{{ domaine.name_d | number }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+  <router-outlet></router-outlet>
