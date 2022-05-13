@@ -1,0 +1,22 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Domaine</h3>
+    <form  (ngSubmit)= "onSubmit()" [formGroup]="bookForm" >
+    
+        <div class = "form-group">
+            <label>Domaine Name</label>
+        
+
+           <input type = "text" class = "form-control" formControlName="title" id= "name_d" required minlength="3" name= "name_d" [(ngModel)] = "domaine.name_d">
+        </div>
+    
+        <div class="container">     
+            <app-grid-view></app-grid-view>    
+        </div>   
+    
+       
+    
+        <button  class ="btn btn-success" type = "submit"  >Submit</button>
+    
+    </form>
+    </div>
+            

@@ -16,7 +16,7 @@ export class DomaineService {
   }
 
   addDomaine(domaine: Domaine): Observable<any>{
-    return this.httpClient.post(`${this.baseURL}`, domaine);
+    return this.httpClient.post<string>(`${this.baseURL}`, domaine);
   }
 
   getDomaineById(id_d: number): Observable<Domaine>{
@@ -35,5 +35,26 @@ export class DomaineService {
   searchDomaine(name_d: string): Observable<Object>{
     return this.httpClient.get(`${this.baseURL}/${name_d}`);
   }
+
+  TestVald(domaine: Domaine): Observable<Object> {
+    return this.httpClient.post<Boolean>(`${this.baseURL+"/testVald"}`, domaine);
+  }
+
+  TestValParMot(name: string): Observable<Object> {
+    return this.httpClient.get<Boolean>(`${this.baseURL+"/TestValParMot"}/${name}`);
+  }
+
+  TestValParMotDesMots(mots : Array<String>): Observable<Object> {
+    return this.httpClient.post<Boolean>(`${this.baseURL+"/TestValParMot"}`,mots);
+  }
+
+  addDomaine2(domaine: Domaine): Observable<any>{
+    return this.httpClient.post<string>(`${this.baseURL}`, domaine);
+  }
+
+
+
+
+
 
 }

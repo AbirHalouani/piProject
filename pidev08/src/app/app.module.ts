@@ -6,10 +6,13 @@ import { HeaderComponent } from './header/header.component';
 import { DomaineListComponent } from './domaine-list/domaine-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AddDomaineComponent } from './add-domaine/add-domaine.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateDomaineComponent } from './update-domaine/update-domaine.component';
 import { GridViewComponent } from './grid-view/grid-view.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ModalModule } from './_modal';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,14 @@ import { GridViewComponent } from './grid-view/grid-view.component';
   ],
   imports: [
     BrowserModule,
+    ModalModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,29 @@
+<h2>Domaine List</h2>
+
+  <nav class="navbar">
+    <input class="form-control" type="text" name="name_d" [(ngModel)]="name_d" (ngModelChange)="Search()"
+         placeholder="search...">
+</nav>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th (click) = "sort('id')">#&nbsp;<i class="fa fa-sort"></i></th>
+            <th>Domaines Names</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let domaine of domaines | orderBy: key: reverse  ; index as i">
+          <td>{{ i + 1 }}</td>
+            <td>{{domaine.name_d}}</td>
+            <td>
+                <button (click)= "updateDomaine(domaine.id_d)" class="btn btn-info">Update</button>
+                <button (click)= "deleteDomaine(domaine.id_d)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+

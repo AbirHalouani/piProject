@@ -22,6 +22,7 @@ export class DomaineListComponent implements OnInit {
   domaines: Domaine[];
   searchTerm = '';
   allDomaines: Domaine[] = [];
+  name_d : any ;
 
   constructor(private domaineService: DomaineService,
     private router: Router) { }
@@ -53,10 +54,23 @@ export class DomaineListComponent implements OnInit {
     })
   }
 
-  search(value: string): void {
-    this.domaines = this.allDomaines.filter((val) =>
-      val.name_d.toLowerCase().includes(value)
-    );
+  Search(){
+    if (this.name_d == ""){
+      this.ngOnInit();
+     }
+     else{
+      this.domaines=this.domaines.filter(res =>{
+        return res.name_d.toLocaleLowerCase().match (this.name_d.toLocaleLowerCase());
+      });
+    }
   }
+
+  key='id';
+  reverse : boolean = false; 
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+  
 
 }
