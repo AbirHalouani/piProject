@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import{TravelService} from 'src/app/service/travelService/travel.service';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-travels-by-user',
   templateUrl: './travels-by-user.component.html',
@@ -14,6 +15,7 @@ export class TravelsByUserComponent implements OnInit {
   id!:number;
   idTravel!:number;
   Travels: Travel[] = [];
+  travelID!:number;
   constructor(private travelService: TravelService,private route : ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
@@ -32,5 +34,9 @@ export class TravelsByUserComponent implements OnInit {
     this.router.navigate(['list-travelPartner',this.id,idTravel]);
   }
 
-
+joinT(idTravel:number)
+{this.travelService.joinT(this.id, this.travelID).subscribe(data =>{
+  console.log(data);
+  });}
+  
 }

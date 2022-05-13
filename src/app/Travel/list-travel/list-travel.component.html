@@ -1,7 +1,13 @@
+
+
 <div class="card-body p-0">
 
+
     <td><button (click)="verifySecurity()" class="btn btn-info"> verify security destination  </button></td>
-    <div class="table-responsive">
+    
+
+        <div class="row large-centered">
+           
         <table class="table table-hover mb-0">
             <thead>
                 <tr>
@@ -21,7 +27,10 @@
             </thead>
             <tbody>
                
-               
+                
+
+
+                
                 <tr *ngFor ="let t of Travels | paginate: { itemsPerPage: 5, currentPage: p }">
                    
                    
@@ -49,4 +58,30 @@
         </table>
      
     </div>
+
+
+ <!--  <div class="col-md-6">
+        <div id= "myChart" class="card">
+            <div class="card-header">
+                <canvas mdbChart
+                [chartType]="chartType"
+                [datasets]="chartDatasets"
+                [labels]="chartLabels"
+                [colors]="chartColors"
+                [options]="chartOptions"
+                [legend]="true"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)">
+              </canvas>
+            </div>
+            <div class="card-body">
+                <div id="bar-chart-1"></div>
+            </div>
+        </div>
+    </div>--> 
+
+
+    
 </div>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/foundation.min.js"></script>

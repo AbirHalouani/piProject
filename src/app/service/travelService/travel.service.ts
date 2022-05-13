@@ -41,4 +41,13 @@ export class TravelService {
 
   verifyDestination():Observable<Object>
   {return this.httpClient.get(`${this.baseURL+"blockDestination"}`);}
+
+  
+  statistique():Observable<any>
+  {return this.httpClient.get(`${this.baseURL+"statistic"}`);}
+
+  getImage(imageUrl: string): Observable<Blob> { return this.httpClient.get(imageUrl, { responseType: 'blob' }); }
+joinT(id:number,idTravel:number):Observable<Object>
+{return this.httpClient.post(`${this.baseURL+"addUserToTravel"}/${id}/${idTravel}`,null);}
+  
 }

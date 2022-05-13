@@ -7,15 +7,56 @@
 </div>
 <div class="row" >
     <div class="col-lg-4 col-md-4 col-sm-6" *ngFor ="let t of Travels | paginate: { itemsPerPage: 3, currentPage: p }"> 
-        <a   class="fh5co-card-item image-popup">
-           
+       
+      
+            <a  href="" class="fh5co-card-item image-popup">
+                <figure>
+                    <div class="overlay"><i class="ti-plus"></i></div>
+<!-- <img src ="flag" alt="Image" class="img-responsive">-->
+                </figure>
             <div class="fh5co-text">
                 <h2> departure : {{t.departurePlace}}  </h2>
                 <h2> destination :  {{t.destination}} </h2>
-                <p><button (click)="travelpartner(t.idTravel)" class="btn btn-info"> travelpartner </button> </p>
-                <p><span class="btn btn-primary">Detail</span></p>
+              
+                <p><button (click)="travelpartner(t.idTravel)" class="btn btn-info"> search travel partner </button> </p>
+              <!--  <p><button (click)="travelpartner(t.idTravel)" class="btn btn-info"> travel partners </button> </p> -->
+                
+                
             </div>
         </a>
     </div>
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    
+   
 </div>
+<div class="gtco-container">
+<div class="form-wrap">
+    <div class="tab">
+        
+        <div class="tab-content">
+<div class="form-wrap">
+    <div class="tab">
+        
+        <div class="tab-content">
+            <div class="tab-content-inner active">
+                <h3>Join travel</h3>
+                <form (ngSubmit)="joinT(travelID)">
+                   
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label >Enter travel key </label>
+                            <input type="text" class="form-control" name="travelID" [(ngModel)]="travelID">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary btn-block" >join</button>
+                        </div>
+                    </div>
+
+                    
+                </form>	
+                </div>
+                </div></div>
+                </div></div></div></div></div>
