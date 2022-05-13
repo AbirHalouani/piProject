@@ -8,10 +8,22 @@
 				</div>
                 <div class="col-xs-8 text-right menu-1">
 					<ul>	
-            
+            <div class="container">
 			<li><a routerLink="/home">home</a></li>
-			
-				
+            <li><a routerLink="/list-travel">Travels</a></li>
+			<li><a routerLink="/add-travel/:id">book Travel</a></li>
+			<li><a routerLink="list-travelByUser/:id">Your Travels</a></li>
+			<li class="has-dropdown">
+				<a href="#">TravelAgency</a>
+				<ul class="dropdown">
+					<li><a  routerLink="/add-travelAgency">create Travel Agency</a></li>
+					<li><a routerLink="/list-travelAgency">Travel Agency</a></li>
+					<li><a routerLink="/statA">statistique</a></li>
+					
+					
+				</ul>
+			</li>
+			</div>	
 				</ul>
 				</div>
 			</div>

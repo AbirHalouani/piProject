@@ -1,0 +1,61 @@
+
+<div class="gtco-container">
+
+</div><div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+    	<div class="form-wrap">
+            <div class="tab">
+                
+                <div class="tab-content">
+                    <div class="tab-content-inner active">
+                        <h3>create travel Agency</h3>
+                        <form (ngSubmit)="onSubmit(travelAgency)">
+                           
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label >nomTravelAgency</label>
+                                    <input type="text" class="form-control" name="nomTravelAgency" [(ngModel)]="travelAgency.nomTravelAgency">
+                                 <!--   <select name="#" id="depart" class="form-control">
+                                        <option value="">Philippines</option>
+                                        <option value="">USA</option>
+                                        <option value="">Australia</option>
+                                        <option value="">Singapore</option>
+                                    </select>-->
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label >TravelAgencylocation</label>
+                                    <input type="text" class="form-control" name="travelAgencylocation" [(ngModel)]="travelAgency.travelAgencylocation">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label >numTravelAgency</label>
+                                    <input type="text" class="form-control" name="numTravelAgency" [(ngModel)]="travelAgency.numTravelAgency">
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label > discount</label>
+                                    <input type="text" class="form-control" name=" discount" [(ngModel)]="travelAgency. discount">
+                                </div>
+                            </div>
+                            
+                            
+                        
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-block" >submit</button>
+                                </div>
+                            </div>
+                        </form>	
+                    </div>
+
+                    
+                    </div>
+            </div>
+        </div>
+    </div>
+

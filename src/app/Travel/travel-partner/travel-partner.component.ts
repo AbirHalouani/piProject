@@ -1,0 +1,24 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { User } from '../../modules/user';
+import{TravelService} from 'src/app/service/travelService/travel.service';
+
+@Component({
+  selector: 'app-travel-partner',
+  templateUrl: './travel-partner.component.html',
+  styleUrls: ['./travel-partner.component.css']
+})
+export class TravelPartnerComponent implements OnInit {
+  p: number = 1;
+  Users!:User[];
+  idUser!:number;
+  idTravel!:number;
+  constructor(private travelService: TravelService,private route : ActivatedRoute) { }
+
+  ngOnInit(): void {
+   this.idUser = this.route.snapshot.params['id'];
+    this.idTravel= this.route.snapshot.params['id1'];
+    this.travelService.getTravelPartnerList(this.idUser,this.idTravel).subscribe(data=>{this.Users=data;},error=>console.log(error));}
+  }
+
+

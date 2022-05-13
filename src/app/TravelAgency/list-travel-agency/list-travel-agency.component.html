@@ -1,0 +1,29 @@
+<div class="card-body p-0">
+    <div class="table-responsive">
+        <table class="table table-hover mb-0">
+            <thead>
+                <tr>
+                    
+                    <th>nomTravelAgency</th>
+                    <th>travelAgencylocation</th>
+                    <th >numTravelAgency</th>
+                    <th >discount</th>
+                    
+                    <th ></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let t of travelAgencys ">
+                   
+                    <td>{{t.nomTravelAgency}}</td>
+                    <td>{{t.travelAgencylocation}}</td>
+                    <td>{{t.numTravelAgency}}</td>
+                    <td>{{t.discount}}</td>
+            
+                    <td><button (click)="updatetravelAgency(t.idTravelAgency)" class="btn btn-info"> update </button></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

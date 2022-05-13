@@ -27,7 +27,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/svg-country-flags/svg",
+                "output": "src/assets/svg-country-flags/svg"
+              }
             ],
             "styles": [
               "src/styles.css",
@@ -35,6 +40,7 @@
             
             ],
             "scripts": []
+        
           },
           "configurations": {
             "production": {
@@ -80,11 +86,13 @@
             }
           },
           "defaultConfiguration": "development"
+         
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "piProject:build"
+            "browserTarget": "piProject:build",
+            "proxyConfig":"src/proxy.conf.json"
           }
         },
         "test": {

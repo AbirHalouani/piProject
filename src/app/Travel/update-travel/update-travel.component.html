@@ -1,0 +1,56 @@
+<div class="col-md-8 offset-md-3">
+<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+    <div class="form-wrap">
+        <div class="tab">
+            
+            <div class="tab-content">
+                <div class="tab-content-inner active">
+                    <h3>Update Your Trip</h3>
+                    <form (ngSubmit)="onSubmit(travel)">
+                       
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label >Depart</label>
+                                <input type="text" class="form-control" name="departurePlace" [(ngModel)]="travel.departurePlace">
+                             <!--   <select name="#" id="depart" class="form-control">
+                                    <option value="">Philippines</option>
+                                    <option value="">USA</option>
+                                    <option value="">Australia</option>
+                                    <option value="">Singapore</option>
+                                </select>-->
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label >Destination</label>
+                                <input type="text" class="form-control" name="destination" [(ngModel)]="travel.destination">
+                            </div>
+                        </div>
+                        
+                        
+                       <div class="row form-group">
+                            <div class="col-md-12">
+                                <label>Date Travel</label>
+                                <input type="datetime-local" name="startDate" class="form-control" [(ngModel)]="travel.startDate"> 
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <label>End Travel  </label>
+                                <input type="datetime-local" name="LastDate" class="form-control" [(ngModel)]="travel.lastDate">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary btn-block" >submit</button>
+                            </div>
+                        </div>
+                    </form>	
+                </div>
+
+                
+                </div>
+        </div>
+    </div>
+</div>
+</div>
